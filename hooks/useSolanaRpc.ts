@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
-const RPC =
-  "https://devnet.helius-rpc.com/?api-key=2a9467ac-f1dc-4a3d-81b8-7954ad4e75a9";
+const RPC = process.env.RPC_Url || "https://api.devnet.solana.com";
 
 export const useSolanaRpc = <T>(method: string, params: any[]) => {
   const [data, setData] = useState<T | null>(null);
